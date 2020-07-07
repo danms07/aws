@@ -55,21 +55,24 @@ function buildNotification(title, message, imgUrl, data, token) {
         message: {
             android: {
                 notification: {
+                     image: "https://data.callmewine.com/imgprodotto/valpolicella-classico-mazzi-2018_19438.jpg",
                     title: title,
                     body: message,
-                    click_action:{
-                        type:1,
-                        intent:"https://dummyapp.com/target?param1=hello&param2=world",
-                        action:"ACTION_VIEW"
+                    click_action: {
+                        type: 1,
+                        intent: "https://dummyapp.com/target?param1=hello&param2=world",
+                        action: "ACTION_VIEW"
                     }
-                }
-                
-            }
+                },
+                data: "Data payload in string format"
+
+            },
+            token:["token1","token2"]
         }
     };
-    if (imgUrl) {
+    /*if (imgUrl) {
         body.message.android.notification.image = imgUrl;
-    }
+    }*/
 
     if (data) {
         body.message.android.data = JSON.stringify(data);
